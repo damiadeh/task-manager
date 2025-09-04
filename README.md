@@ -91,6 +91,7 @@ task-manager/
 │   │   └── App.tsx         # Main application component
 │   └── package.json        # Frontend dependencies
 └── README.md               # This file
+|__ TEST_PLAN.md            # Test plan
 ```
 
 ## 🏗️ Architecture Overview
