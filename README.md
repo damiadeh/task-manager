@@ -45,6 +45,7 @@ Your application will be available at:
 - **Frontend**: http://localhost:3000
 - **Backend API**: http://localhost:3001
 - **Health Check**: http://localhost:3001/health
+- **Note**: .env file is not ignored for this assessment sake.
 
 ### Sample Data
 The seeding script creates 2 sample tasks to help you get started:
@@ -215,10 +216,7 @@ If you prefer $0 hosting:
 ### Environment Variables
 ```bash
 # Backend
-NODE_ENV=production
-PORT=10000
-DATABASE_URL=file:./prisma/dev.db
-CORS_ORIGIN=https://your-frontend-url.onrender.com
+DATABASE_URL="file:./dev.db"
 
 # Frontend
 REACT_APP_API_URL=https://your-backend-url.onrender.com/api

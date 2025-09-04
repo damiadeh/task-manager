@@ -1,5 +1,5 @@
 node_modules/
-.env
+# .env # Environment variables file is not ignored for the sake of this assessment
 backend/node_modules/
 frontend/node_modules/
 backend/dev.db
