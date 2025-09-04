@@ -2,32 +2,6 @@
 
 A full-stack TypeScript task management application built with React frontend and Node.js backend, featuring modern web technologies and a clean, responsive UI.
 
-## ✨ Features
-
-- **📝 Task Management**: Create, read, update, and delete tasks
-- **🎯 Priority Levels**: Set task priorities (Low, Medium, High)
-- **✅ Completion Tracking**: Mark tasks as complete/incomplete
-- **📊 Real-time Statistics**: Live task counts and statistics
-- **🎨 Modern UI**: Beautiful, responsive design with animations
-- **🔍 Smart Filtering**: Filter by status and priority
-- **📱 Mobile Responsive**: Works perfectly on all devices
-- **⚡ Real-time Updates**: Instant UI updates with smooth animations
-
-## 🏗️ Architecture
-
-### Backend (Node.js + Express + TypeScript)
-- **Controllers**: Handle HTTP requests and responses
-- **Services**: Business logic and data validation
-- **Repositories**: Database interactions using Prisma ORM
-- **Middleware**: Error handling and CORS configuration
-- **Database**: SQLite with Prisma ORM
-
-### Frontend (React + TypeScript)
-- **Components**: Modular, reusable UI components
-- **Hooks**: React hooks for state management
-- **Services**: API integration with Axios
-- **Styling**: Modern CSS with animations and responsive design
-
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -62,6 +36,32 @@ Your application will be available at:
 - **Frontend**: http://localhost:3000
 - **Backend API**: http://localhost:3001
 - **Health Check**: http://localhost:3001/health
+- 
+## ✨ Features
+
+- **📝 Task Management**: Create, read, update, and delete tasks
+- **🎯 Priority Levels**: Set task priorities (Low, Medium, High)
+- **✅ Completion Tracking**: Mark tasks as complete/incomplete
+- **📊 Real-time Statistics**: Live task counts and statistics
+- **🎨 Modern UI**: Beautiful, responsive design with animations
+- **🔍 Smart Filtering**: Filter by status and priority
+- **📱 Mobile Responsive**: Works perfectly on all devices
+- **⚡ Real-time Updates**: Instant UI updates with smooth animations
+
+## 🏗️ Architecture
+
+### Backend (Node.js + Express + TypeScript)
+- **Controllers**: Handle HTTP requests and responses
+- **Services**: Business logic and data validation
+- **Repositories**: Database interactions using Prisma ORM
+- **Middleware**: Error handling and CORS configuration
+- **Database**: SQLite with Prisma ORM
+
+### Frontend (React + TypeScript)
+- **Components**: Modular, reusable UI components
+- **Hooks**: React hooks for state management
+- **Services**: API integration with Axios
+- **Styling**: Modern CSS with animations and responsive design
 
 ## 📁 Project Structure
 
