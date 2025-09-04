@@ -176,8 +176,13 @@ interface Task {
 
 ## 🚀 Deployment
 
-### Render (Free Tier)
-This application is configured for easy deployment on Render's free tier.
+### Render
+This application is configured for deployment on Render.
+
+**Pricing Breakdown:**
+- **Frontend**: Free (Static Site)
+- **Backend**: $7/month (Web Service - Starter Plan)
+- **Total Cost**: $7/month for full-stack application
 
 **Quick Deploy:**
 1. Push your code to GitHub
@@ -186,6 +191,12 @@ This application is configured for easy deployment on Render's free tier.
 4. Your app will be live in minutes!
 
 **Detailed Guide**: See [DEPLOYMENT.md](./DEPLOYMENT.md) for step-by-step instructions.
+
+### Free Alternatives
+If you prefer $0 hosting:
+- **Frontend**: Render (free) + **Backend**: Railway (free tier)
+- **Frontend**: Vercel (free) + **Backend**: Supabase (free tier)
+- **Frontend**: Netlify (free) + **Backend**: Render (free tier)
 
 ### Environment Variables
 ```bash

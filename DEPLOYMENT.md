@@ -48,31 +48,7 @@ task-manager/
 2. Sign up with your GitHub account
 3. Verify your email
 
-### Step 2: Deploy Backend API
-
-1. **Click "New +" → "Web Service"**
-2. **Connect your GitHub repository**
-   - Select `task-manager` repository
-   - Click "Connect"
-
-3. **Configure Backend Service:**
-   - **Name**: `task-manager-api`
-   - **Environment**: `Node`
-   - **Region**: Choose closest to you
-   - **Branch**: `main`
-   - **Build Command**: `cd backend && npm install && npm run build`
-   - **Start Command**: `cd backend && npm start`
-   - **Plan**: `Free`
-
-4. **Add Environment Variables:**
-   - **Key**: `NODE_ENV` → **Value**: `production`
-   - **Key**: `PORT` → **Value**: `10000`
-   - **Key**: `DATABASE_URL` → **Value**: `file:./prisma/dev.db`
-   - **Key**: `CORS_ORIGIN` → **Value**: `https://task-manager-frontend.onrender.com`
-
-5. **Click "Create Web Service"**
-
-### Step 3: Deploy Frontend
+### Step 2: Deploy Frontend (Free)
 
 1. **Click "New +" → "Static Site"**
 2. **Connect your GitHub repository**
@@ -88,9 +64,42 @@ task-manager/
 
 4. **Add Environment Variables:**
    - **Key**: `REACT_APP_API_URL` → **Value**: `https://YOUR_BACKEND_URL.onrender.com/api`
-   - Replace `YOUR_BACKEND_URL` with your actual backend service URL
+   - You'll set this after deploying the backend
 
 5. **Click "Create Static Site"**
+
+### Step 3: Deploy Backend (Paid - $7/month)
+
+1. **Click "New +" → "Web Service"**
+2. **Connect your GitHub repository**
+   - Select `task-manager` repository
+   - Click "Connect"
+
+3. **Configure Backend Service:**
+   - **Name**: `task-manager-api`
+   - **Environment**: `Node`
+   - **Region**: Choose closest to you
+   - **Branch**: `main`
+   - **Build Command**: `cd backend && npm install && npm run build`
+   - **Start Command**: `cd backend && npm start`
+   - **Plan**: `Starter` ($7/month)
+
+4. **Add Environment Variables:**
+   - **Key**: `NODE_ENV` → **Value**: `production`
+   - **Key**: `PORT` → **Value**: `10000`
+   - **Key**: `DATABASE_URL` → **Value**: `file:./prisma/dev.db`
+   - **Key**: `CORS_ORIGIN` → **Value**: `https://task-manager-frontend.onrender.com`
+
+5. **Click "Create Web Service"**
+
+### Step 4: Update Frontend API URL
+
+After backend deployment:
+1. Go to your frontend service
+2. Add/Update environment variable:
+   - **Key**: `REACT_APP_API_URL`
+   - **Value**: `https://YOUR_BACKEND_NAME.onrender.com/api`
+3. Redeploy frontend
 
 ## 🔄 Alternative: Use render.yaml (Recommended)
 
@@ -101,6 +110,25 @@ If you prefer automated deployment:
 3. **Select the repository** and click "Connect"
 4. **Render will automatically detect `render.yaml`**
 5. **Click "Create New Environment Instance"**
+
+**Note**: This will create both services with the correct plans.
+
+## 🆓 Free Alternatives for Backend
+
+If you want to keep costs at $0:
+
+### Option 1: Railway (Free Tier)
+- 500 hours/month free
+- Perfect for Node.js applications
+- Easy deployment from GitHub
+
+### Option 2: Render + Free Backend Alternative
+- Frontend on Render (free)
+- Backend on Railway, Heroku, or similar (free tier)
+
+### Option 3: Vercel + Supabase
+- Frontend on Vercel (free)
+- Backend on Supabase (free tier)
 
 ## 📊 Post-Deployment
 
@@ -124,19 +152,20 @@ open https://task-manager-frontend.onrender.com
 
 ## 🚨 Important Notes
 
-### Free Plan Limitations
-- **Backend**: Sleeps after 15 minutes of inactivity
-- **Frontend**: Always available
+### Plan Limitations
+- **Frontend (Free)**: Always available
+- **Backend (Starter - $7/month)**: Always available, no sleep
 - **Database**: SQLite file (persists between deployments)
 
-### Cold Start
-- First request after inactivity may take 30-60 seconds
-- Subsequent requests are fast
+### Cost Breakdown
+- **Frontend**: $0/month (free forever)
+- **Backend**: $7/month (always running)
+- **Total**: $7/month for full-stack app
 
 ### Database Persistence
 - SQLite database is stored in the service
 - Data persists between deployments
-- **Note**: Free tier services may reset occasionally
+- Starter plan provides reliable uptime
 
 ## 🔧 Troubleshooting
 
@@ -202,9 +231,16 @@ NODE_ENV=production npm start
 
 Your Task Manager is now live on Render! 
 
-- **Frontend**: `https://task-manager-frontend.onrender.com`
-- **Backend API**: `https://task-manager-api.onrender.com`
+- **Frontend**: `https://task-manager-frontend.onrender.com` (Free)
+- **Backend API**: `https://task-manager-api.onrender.com` ($7/month)
 - **Health Check**: `https://task-manager-api.onrender.com/health`
+
+## 💡 Cost Optimization Tips
+
+1. **Development**: Use local development for testing
+2. **Staging**: Deploy to free tier alternatives for testing
+3. **Production**: Use Render for reliable hosting
+4. **Monitoring**: Set up alerts for usage limits
 
 ## 📚 Additional Resources
 
@@ -212,3 +248,4 @@ Your Task Manager is now live on Render!
 - [Node.js Deployment](https://render.com/docs/deploy-node-express-app)
 - [Static Site Deployment](https://render.com/docs/deploy-create-react-app)
 - [Environment Variables](https://render.com/docs/environment-variables)
+- [Render Pricing](https://render.com/docs/pricing)
