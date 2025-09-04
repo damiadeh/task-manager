@@ -4,7 +4,7 @@ A full-stack TypeScript task management application built with React frontend an
 
 ## 🎥 Demo
 
-Watch the Task Manager in action: **[Demo Video](https://www.loom.com/share/a8f5dff4bd074a63af6e2606a0d8348e?sid=741203ca-64e1-4168-8f7c-08c1d68a0f9c)**
+Watch the Task Manager in action: **[Demo Video](https://www.loom.com/share/cc25dc6638284f50b868d5494c38f17c?sid=5712f48f-6e6f-4674-b42f-de00bca3a5c5)**
 
 ## 🚀 Quick Start
 
