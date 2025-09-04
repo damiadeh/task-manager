@@ -1,6 +1,6 @@
 # 🚀 Task Manager
 
-A full-stack TypeScript task management application built with React frontend and Node.js backend, featuring modern web technologies and a clean, responsive UI.
+A full-stack TypeScript task management application built with React frontend-app and Node.js backend, featuring modern web technologies and a clean, responsive UI.
 
 ## 🎥 Demo
 
@@ -42,7 +42,7 @@ Watch the Task Manager in action: **[Demo Video](https://www.loom.com/share/cc25
    ```
 
 Your application will be available at:
-- **Frontend**: http://localhost:3000
+- **frontend-app**: http://localhost:3000
 - **Backend API**: http://localhost:3001
 - **Health Check**: http://localhost:3001/health
 - **Note**: .env file is not ignored for this assessment sake.
@@ -72,7 +72,7 @@ The seeding script creates 2 sample tasks to help you get started:
 - **Middleware**: Error handling and CORS configuration
 - **Database**: SQLite with Prisma ORM
 
-### Frontend (React + TypeScript)
+### frontend-app (React + TypeScript)
 - **Components**: Modular, reusable UI components
 - **Hooks**: React hooks for state management
 - **Services**: API integration with Axios
@@ -94,14 +94,14 @@ task-manager/
 │   ├── prisma/             # Database schema & migrations
 │   ├── package.json        # Backend dependencies
 │   └── tsconfig.json       # TypeScript configuration
-├── frontend/                # React frontend application
+├── frontend-app/                # React frontend-app application
 │   ├── src/
 │   │   ├── components/     # React components
 │   │   ├── services/       # API service layer
 │   │   ├── types/          # TypeScript interfaces
 │   │   └── App.tsx         # Main application component
 │   ├── public/              # Static assets
-│   └── package.json        # Frontend dependencies
+│   └── package.json        # frontend-app dependencies
 ├── package.json             # Root package.json with scripts
 ├── render.yaml              # Render deployment configuration
 ├── DEPLOYMENT.md            # Detailed deployment guide
@@ -113,11 +113,11 @@ task-manager/
 
 ### Root Level
 ```bash
-npm run install:all    # Install both frontend and backend dependencies
-npm run dev            # Start both frontend and backend in development mode
-npm run build          # Build both frontend and backend for production
+npm run install:all    # Install both frontend-app and backend dependencies
+npm run dev            # Start both frontend-app and backend in development mode
+npm run build          # Build both frontend-app and backend for production
 npm run backend        # Start only the backend server
-npm run frontend       # Start only the frontend development server
+npm run frontend-app       # Start only the frontend-app development server
 npm run db:setup       # Set up the database and generate Prisma client
 npm run db:studio      # Open Prisma Studio for database management
 ```
@@ -133,9 +133,9 @@ npm run db:push        # Push schema changes to database
 npm run db:studio      # Open Prisma Studio
 ```
 
-### Frontend
+### frontend-app
 ```bash
-cd frontend
+cd frontend-app
 npm start              # Start development server
 npm run build          # Build for production
 npm test               # Run tests
@@ -195,7 +195,7 @@ interface Task {
 This application is configured for deployment on Render.
 
 **Pricing Breakdown:**
-- **Frontend**: Free (Static Site)
+- **frontend-app**: Free (Static Site)
 - **Backend**: $7/month (Web Service - Starter Plan)
 - **Total Cost**: $7/month for full-stack application
 
@@ -209,16 +209,16 @@ This application is configured for deployment on Render.
 
 ### Free Alternatives
 If you prefer $0 hosting:
-- **Frontend**: Render (free) + **Backend**: Railway (free tier)
-- **Frontend**: Vercel (free) + **Backend**: Supabase (free tier)
-- **Frontend**: Netlify (free) + **Backend**: Render (free tier)
+- **frontend-app**: Render (free) + **Backend**: Railway (free tier)
+- **frontend-app**: Vercel (free) + **Backend**: Supabase (free tier)
+- **frontend-app**: Netlify (free) + **Backend**: Render (free tier)
 
 ### Environment Variables
 ```bash
 # Backend
 DATABASE_URL="file:./dev.db"
 
-# Frontend
+# frontend-app
 REACT_APP_API_URL=https://your-backend-url.onrender.com/api
 ```
 
@@ -232,7 +232,7 @@ REACT_APP_API_URL=https://your-backend-url.onrender.com/api
 
 ### TypeScript
 - **Strict Mode**: Full type safety
-- **Interfaces**: Shared types between frontend and backend
+- **Interfaces**: Shared types between frontend-app and backend
 - **Generics**: Type-safe API responses
 - **Error Handling**: Custom error types and middleware
 
@@ -250,7 +250,7 @@ REACT_APP_API_URL=https://your-backend-url.onrender.com/api
 - **CORS**: Configurable cross-origin requests
 - **Error Handling**: Graceful error responses
 
-### Frontend
+### frontend-app
 - **React 18**: Latest React features
 - **Optimized Builds**: Production-ready builds
 - **Lazy Loading**: Code splitting for better performance
@@ -264,7 +264,7 @@ REACT_APP_API_URL=https://your-backend-url.onrender.com/api
 - **Not Found Errors**: Proper 404 responses
 - **Global Error Handler**: Consistent error responses
 
-### Frontend Errors
+### frontend-app Errors
 - **API Errors**: User-friendly error messages
 - **Network Errors**: Offline handling and retry logic
 - **Validation Errors**: Form validation with helpful feedback

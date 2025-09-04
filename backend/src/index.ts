@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3001;
 // CORS configuration for production
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production' 
-    ? process.env.CORS_ORIGIN || 'https://task-manager-frontend.onrender.com'
+    ? process.env.CORS_ORIGIN || 'https://task-manager-frontend-app.onrender.com'
     : 'http://localhost:3000',
   credentials: true,
   optionsSuccessStatus: 200

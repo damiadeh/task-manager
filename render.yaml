@@ -14,15 +14,15 @@ services:
       - key: DATABASE_URL
         value: file:./prisma/dev.db
       - key: CORS_ORIGIN
-        value: https://task-manager-frontend.onrender.com
+        value: https://task-manager-frontend-app.onrender.com
 
-  # Frontend Service
+  # frontend-app Service
   - type: web
-    name: task-manager-frontend
+    name: task-manager-frontend-app
     env: static
     plan: free
-    buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: frontend/build
+    buildCommand: cd frontend-app && npm install && npm run build
+    staticPublishPath: frontend-app/build
     envVars:
       - key: REACT_APP_API_URL
         value: https://task-manager-api.onrender.com/api

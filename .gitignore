@@ -1,9 +1,9 @@
 node_modules/
 # .env # Environment variables file is not ignored for the sake of this assessment
 backend/node_modules/
-frontend/node_modules/
+frontend-app/node_modules/
 backend/dev.db
 backend/.env
-frontend/.env
+frontend-app/.env
 build/
 dist/

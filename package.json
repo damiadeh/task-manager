@@ -4,11 +4,11 @@
   "description": "Full-stack TypeScript task management application",
   "main": "index.js",
   "scripts": {
-    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend-app && npm install",
     "backend": "cd backend && npm run dev",
-    "frontend": "cd frontend && npm start",
-    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
-    "build": "cd backend && npm run build && cd ../frontend && npm run build",
+    "frontend-app": "cd frontend-app && npm start",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend-app\"",
+    "build": "cd backend && npm run build && cd ../frontend-app && npm run build",
     "db:setup": "cd backend && npm run db:generate && npm run db:push",
     "db:seed": "cd backend && npm run db:seed",
     "db:studio": "cd backend && npm run db:studio"

@@ -51,12 +51,12 @@ if [ $? -ne 0 ]; then
 fi
 cd ..
 
-# Build frontend
-echo "📦 Building frontend..."
-cd frontend
+# Build frontend-app
+echo "📦 Building frontend-app..."
+cd frontend-app
 npm run build
 if [ $? -ne 0 ]; then
-    echo "ERROR: Frontend build failed"
+    echo "ERROR: frontend-app build failed"
     exit 1
 fi
 cd ..

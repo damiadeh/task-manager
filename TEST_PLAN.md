@@ -35,7 +35,7 @@
   - Invalid UUID format (should return 400)
   - Database connection errors (should return 500)
 
-## **2. Frontend Testing**
+## **2. frontend-app Testing**
 
 ### **2.1 Component Testing**
 - **Framework**: React Testing Library + Jest
@@ -69,7 +69,7 @@
   - Bulk task operations (1000+ tasks)
   - Database query performance under load
 
-### **4.2 Frontend Performance**
+### **4.2 frontend-app Performance**
 - **Lighthouse Scores**: Target 90+ for all metrics
 - **Bundle Size**: < 500KB gzipped
 - **First Contentful Paint**: < 1.5s
@@ -82,7 +82,7 @@
 - **Data Validation**: Boundary value testing
 
 ### **5.2 API Security**
-- **CORS Configuration**: Verify frontend-only access
+- **CORS Configuration**: Verify frontend-app-only access
 - **Rate Limiting**: Implement if needed
 - **Input Length Limits**: Prevent DoS attacks
 
@@ -118,7 +118,7 @@ DATABASE_URL="file:./test.db"
 - name: Run Tests
   run: |
     cd backend && npm test
-    cd ../frontend && npm test
+    cd ../frontend-app && npm test
     npm run e2e
 ```
 
@@ -129,7 +129,7 @@ npm run test:unit      # Unit tests
 npm run test:integration # Integration tests
 npm run test:coverage  # Coverage report
 
-# Frontend
+# frontend-app
 npm run test           # Component tests
 npm run test:watch     # Watch mode
 npm run test:coverage  # Coverage report
@@ -146,10 +146,10 @@ npm run test:e2e      # End-to-end tests
 - **Prisma**: Database testing utilities
 - **Nock**: HTTP mocking for external APIs
 
-### **9.2 Frontend Testing**
+### **9.2 frontend-app Testing**
 - **React Testing Library**: Component testing utilities
 - **Jest**: Test runner and mocking
-- **MSW**: API mocking for frontend tests
+- **MSW**: API mocking for frontend-app tests
 - **Playwright**: E2E testing framework
 
 ### **9.3 Performance Testing**
