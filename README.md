@@ -1,249 +1,298 @@
-# Task Manager - Full Stack TypeScript Application
+# 🚀 Task Manager
 
-A modern, full-stack task management application built with TypeScript, React, Node.js, and Prisma ORM.
+A full-stack TypeScript task management application built with React frontend and Node.js backend, featuring modern web technologies and a clean, responsive UI.
 
-### Run Locally
-To run the Task Manager application locally, follow these steps:
+## ✨ Features
 
-1. **Clone the repository:**
+- **📝 Task Management**: Create, read, update, and delete tasks
+- **🎯 Priority Levels**: Set task priorities (Low, Medium, High)
+- **✅ Completion Tracking**: Mark tasks as complete/incomplete
+- **📊 Real-time Statistics**: Live task counts and statistics
+- **🎨 Modern UI**: Beautiful, responsive design with animations
+- **🔍 Smart Filtering**: Filter by status and priority
+- **📱 Mobile Responsive**: Works perfectly on all devices
+- **⚡ Real-time Updates**: Instant UI updates with smooth animations
+
+## 🏗️ Architecture
+
+### Backend (Node.js + Express + TypeScript)
+- **Controllers**: Handle HTTP requests and responses
+- **Services**: Business logic and data validation
+- **Repositories**: Database interactions using Prisma ORM
+- **Middleware**: Error handling and CORS configuration
+- **Database**: SQLite with Prisma ORM
+
+### Frontend (React + TypeScript)
+- **Components**: Modular, reusable UI components
+- **Hooks**: React hooks for state management
+- **Services**: API integration with Axios
+- **Styling**: Modern CSS with animations and responsive design
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Git
+
+### Installation
+
+1. **Clone the repository**
    ```bash
    git clone <your-repo-url>
    cd task-manager
    ```
 
-2. **Install all dependencies (root, backend, frontend):**
+2. **Install dependencies**
    ```bash
    npm run install:all
    ```
 
-3. **Set up the database:**
+3. **Set up the database**
    ```bash
    npm run db:setup
    ```
 
-4. **Start the development servers (backend & frontend concurrently):**
+4. **Start development servers**
    ```bash
    npm run dev
    ```
 
-   - The backend API will be available at `http://localhost:3001`
-   - The frontend will be available at `http://localhost:3000`
-
-**Note:**  
-- Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
-- If you encounter database errors, ensure the SQLite file has correct permissions and run `npm run db:setup` again.
-- For more granular control, you can start backend and frontend separately using `npm run backend` and `npm run frontend`.
-
-## 🌐 Environment Variables
-
-### Backend (.env)
-```env
-DATABASE_URL="file:./dev.db"
-PORT=3001
-```
-
-## 🚀 Features
-
-- **Full CRUD Operations**: Create, read, update, and delete tasks
-- **Priority Management**: Set task priorities (Low, Medium, High)
-- **Task Filtering**: Filter tasks by status and priority
-- **Task Statistics**: View total, completed, and pending task counts
-- **Responsive Design**: Mobile-friendly interface
-- **Modern UI/UX**: Clean, intuitive design with smooth animations
-- **Layered Architecture**: Clean separation of concerns with controllers, services, and repositories
-
-## 🛠️ Tech Stack
-
-### Backend
-- **Node.js** with **Express.js**
-- **TypeScript** for type safety
-- **Prisma ORM** for database operations
-- **SQLite** database (file-based)
-- **Layered Architecture**: Controllers → Services → Repositories
-
-### Frontend
-- **React 18** with **TypeScript**
-- **Modern CSS** with responsive design
-- **Axios** for HTTP requests
-- **State management** with React hooks
+Your application will be available at:
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:3001
+- **Health Check**: http://localhost:3001/health
 
 ## 📁 Project Structure
 
 ```
 task-manager/
-├── backend/                 # Node.js + Express API
+├── backend/                 # Backend API server
 │   ├── src/
-│   │   ├── controllers/    # HTTP request handlers
-│   │   ├── services/       # Business logic layer
+│   │   ├── controllers/    # Request handlers
+│   │   ├── services/       # Business logic
 │   │   ├── repositories/   # Data access layer
+│   │   ├── middleware/     # Error handling & CORS
 │   │   ├── routes/         # API route definitions
-│   │   ├── middleware/     # Error handling & middleware
 │   │   ├── types/          # TypeScript interfaces
-│   │   └── index.ts        # Main server file
-│   ├── prisma/             # Database schema and migrations
+│   │   └── index.ts        # Server entry point
+│   ├── prisma/             # Database schema & migrations
 │   ├── package.json        # Backend dependencies
 │   └── tsconfig.json       # TypeScript configuration
-├── frontend/               # React application
+├── frontend/                # React frontend application
 │   ├── src/
 │   │   ├── components/     # React components
 │   │   ├── services/       # API service layer
 │   │   ├── types/          # TypeScript interfaces
 │   │   └── App.tsx         # Main application component
+│   ├── public/              # Static assets
 │   └── package.json        # Frontend dependencies
+├── package.json             # Root package.json with scripts
+├── render.yaml              # Render deployment configuration
+├── DEPLOYMENT.md            # Detailed deployment guide
 └── README.md               # This file
 |__ TEST_PLAN.md            # Test plan
 ```
 
-## 🏗️ Architecture Overview
+## 🛠️ Available Scripts
 
-### Backend Layers
-
-1. **Controllers** (`/controllers/`)
-   - Handle HTTP requests and responses
-   - Input validation and sanitization
-   - Call appropriate service methods
-   - Pass errors to error handling middleware
-
-2. **Services** (`/services/`)
-   - Business logic implementation
-   - Data validation rules
-   - Orchestrate repository operations
-   - Handle business-specific errors
-
-3. **Repositories** (`/repositories/`)
-   - Data access layer
-   - Database operations via Prisma
-   - Raw data manipulation
-   - Database-specific error handling
-
-4. **Middleware** (`/middleware/`)
-   - Global error handling
-   - Request/response processing
-   - Authentication (future enhancement)
-   - Logging and monitoring
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
-
-### Backend Setup
-
-1. **Navigate to backend directory:**
-   ```bash
-   cd backend
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Set up the database:**
-   ```bash
-   npx prisma generate
-   npx prisma db push
-   ```
-
-4. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-   The backend will run on `http://localhost:3001`
-
-### Frontend Setup
-
-1. **Navigate to frontend directory:**
-   ```bash
-   cd frontend
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-   npm start
-   ```
-
-   The frontend will run on `http://localhost:3000`
-
-## 📊 API Endpoints
-
-### Tasks
-- `GET /api/tasks` - Retrieve all tasks
-- `GET /api/tasks/:id` - Retrieve a specific task
-- `POST /api/tasks` - Create a new task
-- `PUT /api/tasks/:id` - Update a task (status, details)
-- `DELETE /api/tasks/:id` - Delete a task
-- `GET /api/tasks/stats` - Return task statistics (total, completed, pending)
-
-### Health Check
-- `GET /health` - Server health status
-
-## 🎨 UI Components
-
-- **TaskForm**: Add new tasks with validation
-- **Task**: Individual task display with actions
-- **App**: Main dashboard with filtering and state management
-
-## 🔧 Run Code Scripts
+### Root Level
+```bash
+npm run install:all    # Install both frontend and backend dependencies
+npm run dev            # Start both frontend and backend in development mode
+npm run build          # Build both frontend and backend for production
+npm run backend        # Start only the backend server
+npm run frontend       # Start only the frontend development server
+npm run db:setup       # Set up the database and generate Prisma client
+npm run db:studio      # Open Prisma Studio for database management
+```
 
 ### Backend
-- `npm run dev` - Start development server with nodemon
-- `npm run build` - Build TypeScript to JavaScript
-- `npm start` - Start production server
-- `npm run db:generate` - Generate Prisma client
-- `npm run db:push` - Push schema changes to database
-- `npm run db:studio` - Open Prisma Studio
-
-### Frontend
-- `npm start` - Start development server
-- `npm run build` - Build for production
-- `npm test` - Run tests
-- `npm run eject` - Eject from Create React App
-
-## 🌐 Environment Variables
-
-### Backend (.env)
-```env
-DATABASE_URL="file:./dev.db"
-PORT=3001
+```bash
+cd backend
+npm run dev            # Start development server with nodemon
+npm run build          # Build TypeScript to JavaScript
+npm run start          # Start production server
+npm run db:generate    # Generate Prisma client
+npm run db:push        # Push schema changes to database
+npm run db:studio      # Open Prisma Studio
 ```
 
 ### Frontend
-The frontend automatically connects to `http://localhost:3001` for the API.
+```bash
+cd frontend
+npm start              # Start development server
+npm run build          # Build for production
+npm test               # Run tests
+npm run eject          # Eject from Create React App
+```
 
-## 📱 Responsive Design
+## 🌐 API Endpoints
 
-The application is fully responsive and works on:
-- Desktop computers
-- Tablets
-- Mobile devices
+### Base URL: `http://localhost:3001/api`
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/tasks` | Retrieve all tasks |
+| `GET` | `/tasks/stats` | Get task statistics (total, completed, pending) |
+| `GET` | `/tasks/:id` | Retrieve a specific task |
+| `POST` | `/tasks` | Create a new task |
+| `PUT` | `/tasks/:id` | Update a task |
+| `DELETE` | `/tasks/:id` | Delete a task |
+| `GET` | `/health` | Health check endpoint |
+
+### Task Object Structure
+```typescript
+interface Task {
+  id: string;
+  title: string;
+  description?: string;
+  priority: 'LOW' | 'MEDIUM' | 'HIGH';
+  completed: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+```
+
+## 🎨 UI Features
+
+### Task Management
+- **Create Tasks**: Form with title, description, and priority
+- **Edit Tasks**: Inline editing for task details
+- **Complete Tasks**: Checkbox to mark tasks as done
+- **Delete Tasks**: Remove tasks with confirmation
+
+### Visual Enhancements
+- **Smooth Animations**: Slide-down effects for completed tasks
+- **Responsive Design**: Works on desktop, tablet, and mobile
+- **Modern Styling**: Clean, professional appearance
+- **Interactive Elements**: Hover effects and transitions
+
+### Filtering & Organization
+- **Status Filters**: All, Pending, Completed
+- **Priority Filters**: High Priority tasks
+- **Real-time Counts**: Live statistics on filter buttons
+- **Smart Sorting**: Uncompleted tasks first, then by creation date
 
 ## 🚀 Deployment
 
+### Render (Free Tier)
+This application is configured for easy deployment on Render's free tier.
+
+**Quick Deploy:**
+1. Push your code to GitHub
+2. Connect your repository to Render
+3. Use the `render.yaml` configuration for automatic setup
+4. Your app will be live in minutes!
+
+**Detailed Guide**: See [DEPLOYMENT.md](./DEPLOYMENT.md) for step-by-step instructions.
+
+### Environment Variables
+```bash
+# Backend
+NODE_ENV=production
+PORT=10000
+DATABASE_URL=file:./prisma/dev.db
+CORS_ORIGIN=https://your-frontend-url.onrender.com
+
+# Frontend
+REACT_APP_API_URL=https://your-backend-url.onrender.com/api
+```
+
+## 🔧 Development
+
+### Database
+- **SQLite**: File-based database for development
+- **Prisma ORM**: Type-safe database operations
+- **Migrations**: Automatic schema management
+- **Studio**: Visual database browser
+
+### TypeScript
+- **Strict Mode**: Full type safety
+- **Interfaces**: Shared types between frontend and backend
+- **Generics**: Type-safe API responses
+- **Error Handling**: Custom error types and middleware
+
+### Testing
+- **API Testing**: Test backend endpoints
+- **Component Testing**: Test React components
+- **Integration Testing**: Test full user workflows
+- **Error Scenarios**: Test error handling and edge cases
+
+## 📊 Performance
+
 ### Backend
-1. Build the application: `npm run build`
-2. Start production server: `npm start`
-3. Set appropriate environment variables
+- **Express.js**: Fast, minimal web framework
+- **Prisma**: Optimized database queries
+- **CORS**: Configurable cross-origin requests
+- **Error Handling**: Graceful error responses
 
 ### Frontend
-1. Build the application: `npm run build`
-2. Deploy the `build` folder to your hosting service
+- **React 18**: Latest React features
+- **Optimized Builds**: Production-ready builds
+- **Lazy Loading**: Code splitting for better performance
+- **Responsive Images**: Optimized for all screen sizes
 
-### Common Issues
+## 🚨 Error Handling
 
-1. **Database connection errors**: Ensure the SQLite file has proper permissions
-2. **CORS errors**: Check that the backend is running and CORS is properly configured
-3. **Port conflicts**: Change the PORT in backend .env file if 3001 is occupied
+### Backend Errors
+- **Validation Errors**: Input validation with clear messages
+- **Database Errors**: Graceful database operation failures
+- **Not Found Errors**: Proper 404 responses
+- **Global Error Handler**: Consistent error responses
 
-### Getting Help
+### Frontend Errors
+- **API Errors**: User-friendly error messages
+- **Network Errors**: Offline handling and retry logic
+- **Validation Errors**: Form validation with helpful feedback
+- **Error Boundaries**: Graceful error recovery
 
-- Check the console for error messages
-- Verify both frontend and backend are running
-- Ensure database is properly initialized with `npx prisma db push`
+## 🔒 Security
+
+- **CORS Configuration**: Restrict cross-origin requests
+- **Input Validation**: Server-side data validation
+- **SQL Injection Protection**: Prisma ORM prevents SQL injection
+- **Environment Variables**: Secure configuration management
+
+## 📱 Browser Support
+
+- **Modern Browsers**: Chrome, Firefox, Safari, Edge
+- **Mobile Browsers**: iOS Safari, Chrome Mobile
+- **Progressive Enhancement**: Graceful degradation for older browsers
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🆘 Support
+
+If you encounter any issues:
+
+1. Check the [troubleshooting section](./DEPLOYMENT.md#troubleshooting)
+2. Review the [deployment guide](./DEPLOYMENT.md)
+3. Check the application logs
+4. Verify environment variables
+5. Test locally before deploying
+
+## 🎯 Roadmap
+
+- [ ] User authentication and authorization
+- [ ] Task categories and tags
+- [ ] File attachments for tasks
+- [ ] Task deadlines and reminders
+- [ ] Team collaboration features
+- [ ] Advanced search and filtering
+- [ ] Data export and backup
+- [ ] Mobile app (React Native)
+
+---
+
+**Happy Task Managing! 🎉**

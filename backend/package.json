@@ -9,7 +9,8 @@
     "dev": "nodemon src/index.ts",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "postinstall": "prisma generate"
   },
   "keywords": ["task-manager", "api", "typescript", "prisma"],
   "author": "",
@@ -28,5 +29,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

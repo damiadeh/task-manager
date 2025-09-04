@@ -1,56 +1,64 @@
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import taskRoutes from './routes/tasks';
-import { TaskController } from './controllers/task.controller';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler';
-
-
-dotenv.config();
+import { PrismaClient } from '@prisma/client';
 
 const app = express();
+const prisma = new PrismaClient();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+// CORS configuration for production
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production' 
+    ? process.env.CORS_ORIGIN || 'https://task-manager-frontend.onrender.com'
+    : 'http://localhost:3000',
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
-app.use('/api/tasks', taskRoutes);
-
-// Health check
+// Health check endpoint
 app.get('/health', (req, res) => {
-  res.json({ status: 'OK', timestamp: new Date().toISOString() });
+  res.json({ 
+    status: 'OK', 
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || 'development'
+  });
 });
 
+// API routes
+app.use('/api/tasks', taskRoutes);
+
+// 404 handler
 app.use(notFoundHandler);
+
+// Global error handler
 app.use(errorHandler);
 
+// Graceful shutdown
+const gracefulShutdown = async (signal: string) => {
+  console.log(`\n🔄 Received ${signal}. Starting graceful shutdown...`);
+  
+  try {
+    await prisma.$disconnect();
+    console.log('✅ Database connection closed');
+    process.exit(0);
+  } catch (error) {
+    console.error('❌ Error during shutdown:', error);
+    process.exit(1);
+  }
+};
 
-const server = app.listen(PORT, () => {
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+
+app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`Health check: http://localhost:${PORT}/health`);
   console.log(`Tasks API: http://localhost:${PORT}/api/tasks`);
   console.log(`Task Stats: http://localhost:${PORT}/api/tasks/stats`);
+  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
 });
-
-// Graceful shutdown handling
-const taskController = new TaskController();
-
-process.on('SIGTERM', async () => {
-  console.log('🛑 SIGTERM received, shutting down gracefully...');
-  await taskController.disconnect();
-  server.close(() => {
-    console.log('✅ Server closed');
-    process.exit(0);
-  });
-});
-
-process.on('SIGINT', async () => {
-  console.log('🛑 SIGINT received, shutting down gracefully...');
-  await taskController.disconnect();
-  server.close(() => {
-    console.log('✅ Server closed');
-    process.exit(0);
-  });
-});
-
-export default app;
