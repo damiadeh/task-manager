@@ -2,6 +2,10 @@
 
 A full-stack TypeScript task management application built with React frontend and Node.js backend, featuring modern web technologies and a clean, responsive UI.
 
+## 🎥 Demo
+
+Watch the Task Manager in action: **[Demo Video](https://www.loom.com/share/a8f5dff4bd074a63af6e2606a0d8348e?sid=741203ca-64e1-4168-8f7c-08c1d68a0f9c)**
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -27,7 +31,12 @@ A full-stack TypeScript task management application built with React frontend an
    npm run db:setup
    ```
 
-4. **Start development servers**
+4. **Seed with sample data (optional)**
+   ```bash
+   npm run db:seed
+   ```
+
+5. **Start development servers**
    ```bash
    npm run dev
    ```
@@ -36,7 +45,12 @@ Your application will be available at:
 - **Frontend**: http://localhost:3000
 - **Backend API**: http://localhost:3001
 - **Health Check**: http://localhost:3001/health
-- 
+
+### Sample Data
+The seeding script creates 2 sample tasks to help you get started:
+-  **Welcome to Task Manager!** - A completed high-priority task
+-  **Explore the Features** - A pending medium-priority task
+
 ## ✨ Features
 
 - **📝 Task Management**: Create, read, update, and delete tasks

@@ -41,6 +41,20 @@ task-manager/
 └── README.md
 ```
 
+### 3. Test Database Seeding (Optional)
+
+Before deployment, you can test the database seeding locally:
+
+```bash
+# Set up database and seed with sample data
+npm run db:setup
+npm run db:seed
+```
+
+This will create 2 sample tasks:
+- ✅ **Welcome to Task Manager!** (Completed, High Priority)
+- ⏳ **Explore the Features** (Pending, Medium Priority)
+
 ## 🌐 Deploy to Render
 
 ### Step 1: Create Render Account
