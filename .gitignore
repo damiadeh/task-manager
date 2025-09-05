@@ -3,7 +3,7 @@ node_modules/
 backend/node_modules/
 frontend-app/node_modules/
 backend/dev.db
-backend/.env
+# backend/.env  # Removed from gitignore for assessment
 frontend-app/.env
 build/
 dist/
