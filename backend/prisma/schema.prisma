@@ -14,14 +14,8 @@ model Task {
   id          String   @id @default(cuid())
   title       String
   description String?
-  priority    Priority @default(LOW)
+  priority    String   @default("LOW") 
   completed   Boolean  @default(false)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-}
-
-enum Priority {
-  LOW
-  MEDIUM
-  HIGH
 }
